@@ -48,11 +48,12 @@ public class AccountController {
 
         if (success) {
             model.addAttribute("message", "Реєстрація успішна!");
+            return "redirect:/users";
         } else {
             model.addAttribute("message", "Користувач із таким іменем вже існує.");
         }
 
-        return "account/register";
+        return "account/users";
     }
 
 }
