@@ -56,9 +56,9 @@ public class AppDbSeeder {
                 CategorySeed seed = new CategorySeed();
                 seed.setName(faker.commerce().department());
                 seed.setSlug(slugify.slugify(seed.getName()));
-                seed.setImageUrl(null);
-
+                seed.setImageUrl("https://loremflickr.com/640/480/");
                 CategoryEntity category = categoryMapper.toEntity(seed);
+                category.setImage(fileService.load(seed.getImageUrl()));
                 categoryRepository.save(category);
             }
             System.out.println("--------- Finish category seeder -----------");
