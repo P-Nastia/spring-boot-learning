@@ -86,7 +86,7 @@ public class AppDbSeeder {
                     seed.setName(faker.commerce().productName());
                     seed.setSlug(slugify.slugify(seed.getName()));
                     seed.setDescription(faker.lorem().paragraph());
-
+                    seed.setPrice(faker.number().randomDouble(2, 100, 2000));
                     var randomCategory = categories.get(faker.random().nextInt(categories.size()));
                     seed.setCategoryId(randomCategory.getId());
 

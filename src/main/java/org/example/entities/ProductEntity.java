@@ -25,6 +25,9 @@ public class ProductEntity {
     private String description;
 
     @Column
+    private double price;
+
+    @Column
     private boolean isDeleted = false;
 
     @ManyToOne(fetch = FetchType.LAZY)

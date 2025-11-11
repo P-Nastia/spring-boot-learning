@@ -8,7 +8,7 @@ import lombok.Setter;
 public class ProductSeed {
     private String name;
     private String slug;
-    private String[] imagesUrl;
     private long categoryId;
     private String description;
+    private double price;
 }

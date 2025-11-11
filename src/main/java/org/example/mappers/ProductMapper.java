@@ -8,5 +8,6 @@ import org.mapstruct.Mapping;
 @Mapper(componentModel = "spring")
 public interface ProductMapper {
     @Mapping(target = "images", ignore = true)
+    @Mapping(target = "price", source = "price")
     ProductEntity toEntity(ProductSeed product);
 }
