@@ -10,4 +10,5 @@ public class ProductSeed {
     private String slug;
     private String[] imagesUrl;
     private long categoryId;
+    private String description;
 }

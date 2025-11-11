@@ -1,14 +1,15 @@
 package org.example.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
+@Entity
 @Getter
 @Setter
+@Table(name = "products")
 public class ProductEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,12 +21,16 @@ public class ProductEntity {
     @Column(length = 255)
     private String slug;
 
-    @Column(length = 2000)
+    @Column(length = 2000, nullable = false)
     private String description;
 
     @Column
-    private String image;
+    private boolean isDeleted = false;
 
-    @Column
-    private boolean isDeleted;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "categoryId", nullable = false)
+    private CategoryEntity category;
+
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<ImageEntity> images;
 }

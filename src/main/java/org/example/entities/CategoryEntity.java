@@ -22,4 +22,7 @@ public class CategoryEntity {
 
     @Column(nullable = true, length = 200)
     private String image;
+
+    @Column
+    private boolean isDeleted = false;
 }
