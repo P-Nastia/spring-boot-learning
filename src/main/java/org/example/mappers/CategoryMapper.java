@@ -1,6 +1,5 @@
 package org.example.mappers;
 
-import org.example.data.dtos.CategoryCreateDTO;
 import org.example.data.seed.CategorySeed;
 import org.example.entities.CategoryEntity;
 import org.mapstruct.Mapper;
