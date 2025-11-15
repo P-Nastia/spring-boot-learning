@@ -16,4 +16,5 @@ public class ProductListItemDTO {
     private String description;
     private String slug;
     private String image;
+    private double price;
 }
